@@ -1,0 +1,39 @@
+.container {
+  width: 80vw;
+  margin-top: -350px;
+}
+
+table {
+  width: 100%;
+}
+
+.action{
+  cursor: pointer;
+}
+
+
+.situation-business.active {
+  color: #6bf279;
+}
+
+.situation-business.inactive {
+  color: #ff7573;
+}
+
+
+.title h1{
+  font-size: 3.0em;
+  font-weight: 500;
+}
+
+.sub-title h3{
+  font-size: 1.5em;
+  color: #767676;
+  margin-bottom: -3%;
+}
+
+.fied-full-width {
+  width: 30%;
+  margin-left: 70%;
+  margin-bottom: 0%;
+}

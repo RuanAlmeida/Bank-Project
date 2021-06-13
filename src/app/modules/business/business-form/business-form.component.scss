@@ -1,0 +1,71 @@
+.container {
+  width: 80vw;
+  margin-top: -270px;
+}
+
+
+
+.title h1{
+  font-size: 3.0em;
+  font-weight: 500;
+}
+
+.sub-title h3{
+  font-size: 1.5em;
+  color: #767676;
+}
+
+
+mat-form-field{
+  padding: 0px 15px 0px;
+}
+
+.title-description {
+  font-size: 1.2em;
+  font-weight: 300;
+  padding: 0px 0px 15px;
+}
+
+.andress, .entity {
+  padding: 30px 0px 0px;
+}
+
+
+.fied-full-width {
+  width: 40%;
+}
+
+mat-form-field{
+  font-size: 1.3em;
+}
+
+.field-cep{
+  float: left;
+}
+
+
+
+
+.button-row{
+  margin-top: 1%;
+
+}
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+  color: white;
+  font-size: 1.3em;
+}
+
+.button-back {
+  background-color: #989898;
+  // width: 10%;
+  height: 50px;
+}
+
+
+.button-save {
+  background-color: #fa8341;
+  width: 10%;
+  height: 50px;
+}

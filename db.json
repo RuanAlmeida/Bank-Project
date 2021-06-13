@@ -1,0 +1,17 @@
+{
+  "ibusiness": [
+    {
+      "id": "1",
+      "name": "Itaú BBA",
+      "business": "Financial Center",
+      "valuation": "R$850,000,000.50",
+      "active": true,
+      "cep": "04538-132",
+      "cnpj": "17.298.092/0001-30",
+      "city": "São Paulo",
+      "state": "SP",
+      "street": "Avenida Brigadeiro Faria Lima",
+      "district": "Itaim Bibi"
+    }
+  ]
+}

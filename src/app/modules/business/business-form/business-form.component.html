@@ -1,0 +1,90 @@
+<div class="container">
+
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="title">
+      <h1>Polo {{name}}</h1>
+    </div>
+
+    <div class="sub-title">
+      <h3>exibindo detalhes do polo {{name}} #{{form.value.id}} </h3>
+    </div>
+
+    <div class="andress">
+
+      <div class="title-description">
+        <p> Detalhes do Endereco</p>
+      </div>
+
+      <div class="field-cep">
+        <app-cep-input
+        (loadAndress)="loadAndress($event)"
+        [cpe]="form.value.cep"
+        ></app-cep-input>
+      </div>
+
+      <mat-form-field appearance="outline" class="fied-full-width">
+        <input matInput formControlName="street" name="street" placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="district" name="district" placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="state" name="state" placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="city" name="city" placeholder="Placeholder">
+      </mat-form-field>
+
+    </div>
+
+
+    <div class="entity">
+
+      <div class="title-description">
+        <p> Detalhes da Empresa</p>
+      </div>
+
+      <mat-form-field appearance="outline" style="padding: 0px 0px 0px;">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" name="name" placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Business</mat-label>
+        <input matInput formControlName="business" name="business" placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Valuation</mat-label>
+        <input matInput formControlName="valuation" name="valuation" placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>CNPJ</mat-label>
+        <input matInput formControlName="cnpj" name="cnpj"  placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Ativo ?</mat-label>
+        <mat-select formControlName="active" [disabled]="!isCreateOrUpdateEntity">
+          <mat-option *ngFor="let active of actives" [value]="active">
+            {{active | descriptionActive}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+
+    </div>
+
+    <section>
+      <div class="button-row">
+        <button mat-raised-button class="button-back" type="button" (click)="back()">Voltar</button>
+        <button mat-raised-button class="button-save" *ngIf="isCreateOrUpdateEntity" type="submit"  [disabled]="!form.valid">Salvar</button>
+      </div>
+    </section>
+  </form>
+
+
+</div>
