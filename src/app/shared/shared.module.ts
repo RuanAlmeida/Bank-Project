@@ -18,6 +18,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { CepPipe } from './pipe/cep.pipe';
 import { CnpjPipe } from './pipe/cnpj.pipe';
 import { DescriptionActivePipe } from './pipe/description-active.pipe';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 
@@ -44,7 +45,8 @@ import { DescriptionActivePipe } from './pipe/description-active.pipe';
     MatGridListModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
   exports: [
     MatSliderModule,
@@ -64,7 +66,8 @@ import { DescriptionActivePipe } from './pipe/description-active.pipe';
     CepInputComponent,
     FormsModule,
     ReactiveFormsModule,
-    CnpjPipe
+    CnpjPipe,
+    MatMenuModule
   ]
 })
 export class SharedModule { }

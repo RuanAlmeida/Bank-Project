@@ -6,6 +6,27 @@
   float: left;
 }
 
-.menu{
+.itens{
   float: right;
+}
+
+.icon {
+  font-size: 5em;
+}
+
+.itens {
+  display: grid;
+  // grid-template: 20vh 70vh 10vh/3fr 1fr;
+  grid-template-areas:
+    "h h"
+    "m a"
+    "f f";
+}
+
+.language {
+  grid-area: h;
+}
+
+.menu {
+  grid-area: m;
 }

@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './shared/core/core.module';
 import { SharedModule } from './shared/shared.module';
-
+import { BlockUIModule } from 'ng-block-ui';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     SharedModule,
     ToastNoAnimationModule.forRoot(),
+    BlockUIModule.forRoot(),
+    TranslateModule.forRoot(),
     CoreModule
   ],
   providers: [

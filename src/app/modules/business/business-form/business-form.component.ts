@@ -1,3 +1,4 @@
+import { finalize } from 'rxjs/operators';
 import { CepPipe } from './../../../shared/pipe/cep.pipe';
 import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -9,13 +10,17 @@ import { Andress } from './../../../shared/domain/andress.model';
 import { CnpjPipe } from './../../../shared/pipe/cnpj.pipe';
 import { BusinessService } from './../../../shared/service/business.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 @Component({
   selector: 'app-business-form',
   templateUrl: './business-form.component.html',
   styleUrls: ['./business-form.component.scss']
 })
 export class BusinessFormComponent implements OnInit {
+
+
+  @BlockUI() blockUI!: NgBlockUI;
+
   form!: FormGroup;
 
   option: any;
@@ -102,9 +107,13 @@ export class BusinessFormComponent implements OnInit {
    }
 
   onSubmit(){
+    this.blockUI.start('Loading...');
     this.iBusiness = this.form.value;
     this.businessService.update(this.iBusiness)
-    .subscribe(()=>  this.toastr.success('Mensagem de Sucesso', 'Registro Salvo!'))
+    .pipe(finalize(() => this.blockUI.stop()))
+    .subscribe(()=>  {
+      this.toastr.success('Mensagem de Sucesso', 'Registro Salvo!');
+      this.back();})
   }
 
   cleanValuesIBusiness(){
@@ -114,7 +123,9 @@ export class BusinessFormComponent implements OnInit {
   }
 
   findOne(id: number){
+    this.blockUI.start('Loading...');
     this.businessService.findOne(id)
+    .pipe(finalize(() => this.blockUI.stop()))
     .subscribe(args =>  this.onLoadEntity(args));
   }
 

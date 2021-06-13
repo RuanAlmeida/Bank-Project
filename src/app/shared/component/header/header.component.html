@@ -2,7 +2,26 @@
   <div class="logo">
     <img mat-card-image src="../assets/imagens/logo.png" alt="Photo of a Shiba Inu" width="130">
   </div>
-  <div class="menu">
-    <img mat-card-image src="../assets/imagens/logo.png" alt="Photo of a Shiba Inu" width="100">
+
+  <div class="itens">
+
+    <div class="language">
+      <div class="example-button-row">
+        <button mat-button>Basic</button>
+      </div>
+    </div>
+
+    <div class="menu">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon style="font-size: 5em;">circle</mat-icon>
+
+        <span>Jon Doe</span>
+        <span>Diretor Itaul BBA</span>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+
+      </mat-menu>
+    </div>
   </div>
 </div>
