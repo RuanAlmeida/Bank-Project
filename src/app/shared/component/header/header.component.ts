@@ -8,6 +8,8 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class HeaderComponent implements OnInit {
 
+  selected = 'pt';
+
   constructor(
     private translateService: TranslateService
   ) { }

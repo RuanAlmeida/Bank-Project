@@ -1,30 +1,29 @@
+<div class="container">
 
-<div class="container" >
-
-  <div class="header">
-
+  <header>
     <div class="title">
       <h1>Polo Itaú</h1>
     </div>
-
     <div class="sub-title">
-      <h3 >confira abaixo alguns dos principais polos do itaú</h3>
+      <h3>confira abaixo alguns dos principais polos do itaú</h3>
     </div>
+  </header>
+
+  <aside>
 
     <div class="field-filter">
-      <mat-form-field appearance="outline" class="fied-full-width">
-        <input matInput placeholder="Pesquisa..." (keyup)="doFilter($event)" >
+      <mat-form-field appearance="outline" class="field-full-width">
+        <input matInput placeholder="Pesquisa..." (keyup)="doFilter($event)">
       </mat-form-field>
     </div>
 
+  </aside>
 
-  </div>
+  <main>
 
-  <div class="table-business">
+    <div class="mat-elevation-z8">
 
-    <div class="mat-elevation-z8" >
-
-      <table mat-table [dataSource]="business"  matSort>
+      <table mat-table [dataSource]="business" matSort>
 
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name. </th>
@@ -45,20 +44,23 @@
         <ng-container matColumnDef="active">
           <th mat-header-cell *matHeaderCellDef> Ativo </th>
           <td mat-cell *matCellDef="let element">
-              <mat-icon class="situation-business" [ngClass]="{' active': element.active,
+            <mat-icon class="situation-business" [ngClass]="{' active': element.active,
               ' inactive': !element.active}">circle</mat-icon>
           </td>
         </ng-container>
 
-        <ng-container matColumnDef="action" >
+        <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Ação </th>
           <td mat-cell *matCellDef="let element" style="text-align: center;">
-             <a class="action" matTooltip="Ver detalhes">
-             <mat-icon (click)="showDetail(element.id)">visibility</mat-icon>
+            <a class="action" matTooltip="Detalhar">
+              <mat-icon (click)="showDetail(element.id)">visibility</mat-icon>
             </a>
             <a class="action" matTooltip="Editar">
               <mat-icon (click)="goToEdition(element.id)">mode_edit</mat-icon>
-             </a>
+            </a>
+            <a class="action" matTooltip="Deletar">
+              <mat-icon (click)="openDialog(element.id)">delete</mat-icon>
+            </a>
           </td>
         </ng-container>
 
@@ -70,6 +72,6 @@
 
 
     </div>
-  </div>
+  </main>
 
 </div>

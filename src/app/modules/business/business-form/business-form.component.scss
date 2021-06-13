@@ -1,8 +1,33 @@
 .container {
+  margin-top: -200px;
+  display: grid;
+  grid-template: 10vh 30vh 10vh/3fr 1fr;
+  grid-template-areas: "h h" "m m" "f f";
   width: 80vw;
-  margin-top: -270px;
 }
 
+header {
+  grid-area: h;
+  display: grid;
+  align-content: flex-start;
+  justify-content: start;
+}
+
+
+main {
+  grid-area: m;
+  display: grid;
+}
+
+footer{
+  grid-area: f;
+  display: grid;
+  // align-content: center;
+}
+
+table {
+  width: 100%;
+}
 
 
 .title h1{
@@ -43,12 +68,8 @@ mat-form-field{
   float: left;
 }
 
-
-
-
 .button-row{
-  margin-top: 1%;
-
+  margin-top: 5%;
 }
 
 .button-row .mat-button-base {
@@ -59,7 +80,6 @@ mat-form-field{
 
 .button-back {
   background-color: #989898;
-  // width: 10%;
   height: 50px;
 }
 

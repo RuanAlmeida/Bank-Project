@@ -1,21 +1,20 @@
 <block-ui>
 
-<mat-grid-list cols="4" rowHeight="100px">
+  <div class="container">
 
-  <mat-grid-tile
-  [colspan]="4"
-  [rowspan]="1"
-  [style.background]="'#ffe0cc'"
-  style="border-bottom: 3px solid #ff7a23;">
-    <app-header></app-header>
-  </mat-grid-tile>
+    <header>
+      <div class="component-header">
+        <app-header></app-header>
+      </div>
+    </header>
 
-  <mat-grid-tile
-  [colspan]="4"
-  [rowspan]="9"
-  [style.background]="'#fbfbfb'" >
-    <router-outlet></router-outlet>
-  </mat-grid-tile>
+    <main>
+      <div class="components">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
 
-</mat-grid-list>
+  </div>
+
+
 </block-ui>

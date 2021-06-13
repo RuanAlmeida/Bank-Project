@@ -2,31 +2,63 @@
   width: 80vw;
 }
 
-.logo{
-  float: left;
-}
-
-.itens{
-  float: right;
-}
-
-.icon {
-  font-size: 5em;
-}
-
-.itens {
+.container {
   display: grid;
-  // grid-template: 20vh 70vh 10vh/3fr 1fr;
-  grid-template-areas:
-    "h h"
-    "m a"
-    "f f";
+  grid-template-columns: 5fr 0.5fr 0.4fr 0.6fr;
+  grid-template-rows: 15vh;
+  grid-template-areas: "logo language img-user mn";
+}
+
+.logo {
+  grid-area: logo;
+  display: grid;
+  align-content: center;
 }
 
 .language {
-  grid-area: h;
+  grid-area: language;
+  display: grid;
+  align-content: center;
+  justify-content: end;
+  margin-right: -30%;
+  border-right: 1px solid black;
+  height: 50px;
+  margin-top: 40px;
+}
+
+.language-button {
+  font-weight: 600;
+}
+
+.lang-button {
+  font-size: 1.6em;
+}
+
+.img-user {
+  grid-area: img-user;
+  display: grid;
+  align-content: center;
+  justify-content: space-evenly;
+  margin-left: 40%;
+}
+
+.img-user mat-icon {
+  font-size: 3.7em;
+  color: #333333;
 }
 
 .menu {
-  grid-area: m;
+  grid-area: mn;
+  display: grid;
+  align-content: center;
+  justify-content: start;
+}
+
+.menu .name {
+  text-align: start;
+}
+
+.menu .function {
+  font-weight: 100;
+  margin-top: -15%;
 }

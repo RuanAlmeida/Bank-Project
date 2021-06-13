@@ -112,7 +112,7 @@ export class BusinessFormComponent implements OnInit {
     this.businessService.update(this.iBusiness)
     .pipe(finalize(() => this.blockUI.stop()))
     .subscribe(()=>  {
-      this.toastr.success('Mensagem de Sucesso', 'Registro Salvo!');
+      this.toastr.success('Mensagem de Sucesso', 'Registro Atualizado!');
       this.back();})
   }
 

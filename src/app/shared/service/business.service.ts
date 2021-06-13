@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from "rxjs/operators";
 import { IBusiness } from 'src/app/shared/domain/ibusiness.model';
 import { ConstantsUltis } from "src/app/shared/utils/ConstantsUltis";
 
@@ -22,7 +23,7 @@ export class BusinessService {
 
 
   update(iBusiness: IBusiness){
-    return this.http.put<IBusiness>(`http://localhost:3000/ibusiness/${iBusiness.id}`, iBusiness);
+    return this.http.put<IBusiness>(`${ConstantsUltis.URL_FAKE_API}/${iBusiness.id}`, iBusiness)
+    .pipe(tap(arg => console.log(arg)));
   }
-
 }
