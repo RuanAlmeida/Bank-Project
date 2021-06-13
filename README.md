@@ -1,27 +1,23 @@
 # ItauBankProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+Esse pequeno projeto está sendo um desafio para medir o nível de conhecimento, é um projeto bastante simples. Para executá-lo basta apenas seguir os passos abaixo:
 
 ## Development server
+Rode 
+`npm install`, 
+`npm start`, 
+`json-server --watch db.json` 
+ . No navegador va para `http://localhost:4300/`.
+Foi utilizado basicamente apenas angular em seu desenvolvimento, utilizei da biblioteca json-server, para criar uma simulação api, para esta usando no sistema.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Angular
+MIT License
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Copyright (c) <2020>
 
-## Build
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
