@@ -20,6 +20,14 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    const lang = localStorage.getItem('lang') || 'pt';
+
+    request = request.clone({
+        setHeaders: {
+          'Accept-Language': lang
+        }
+    });
+
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         this.toastrService.error(error.message, error.statusText);

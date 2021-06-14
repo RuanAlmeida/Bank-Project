@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'itau-bank-project';
+
+  constructor(public translateService: TranslateService) {
+    translateService.setDefaultLang('pt');
+    translateService.use(localStorage.getItem('lang') || 'pt');
+  }
+
 }

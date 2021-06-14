@@ -11,8 +11,8 @@
 
     <div class="language">
       <div class="language-button">
-        <button class="lang-button" mat-button>PT</button>
-        <button class="lang-button" mat-button>EN</button>
+        <button class="lang-button" (click)="changeLanguade()" *ngIf="buttonLanguangeAtive" mat-button>PT</button>
+        <button class="lang-button" (click)="changeLanguade()" *ngIf="!buttonLanguangeAtive" mat-button>EN</button>
       </div>
     </div>
 
@@ -29,14 +29,14 @@
           <span>Jon Doe</span>
         </div>
         <div class="function">
-          <span>Diretor Itaul BBA
+          <span>{{'menu.cargo'  | translate}}
             <mat-icon>keyboard_arrow_down</mat-icon>
           </span>
         </div>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Alterar Senha</button>
-        <button mat-menu-item>Sair</button>
+        <button mat-menu-item>{{'menu.itens.alterar-senha'  | translate}}a</button>
+        <button mat-menu-item>{{'menu.itens.sair'  | translate}}</button>
       </mat-menu>
     </div>
 

@@ -1,16 +1,17 @@
-import { ToastrService } from 'ngx-toastr';
-import { DialogComponent } from './../../../shared/component/dialog/dialog.component';
-import { finalize } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
+import { ToastrService } from 'ngx-toastr';
+import { finalize } from 'rxjs/operators';
 import { IBusiness } from 'src/app/shared/domain/ibusiness.model';
 import { ConstantsUltis } from 'src/app/shared/utils/ConstantsUltis';
+import { DialogComponent } from './../../../shared/component/dialog/dialog.component';
 import { BusinessService } from './../../../shared/service/business.service';
-import { BlockUI, NgBlockUI } from 'ng-block-ui';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-business-list',
@@ -29,11 +30,13 @@ export class BusinessListComponent implements OnInit {
 
   value: string = '';
 
+
   constructor(
     private businessService: BusinessService,
     private router: Router,
     private dialog: MatDialog,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
   ) { }
 
 
@@ -47,7 +50,7 @@ export class BusinessListComponent implements OnInit {
   }
 
   findAll() {
-    this.blockUI.start('Loading...');
+    this.blockUI.start(this.translate.instant('mensagens.carregando'));
     this.businessService.findAll()
       .pipe(finalize(() => this.blockUI.stop()))
       .subscribe(args => {
@@ -75,18 +78,18 @@ export class BusinessListComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.blockUI.start('Loading...');
+    this.blockUI.start(this.translate.instant('mensagens.carregando'));
 
     const index = this.getIndexBusiness(id);
 
     if (index !== -1) {
       this.business.data.splice(index, 1);
       this.initializationPagingMethods();
-      this.toastr.success('Mensagem de Sucesso', 'Registro Deletado!');
+      this.toastr.success(this.translate.instant('mensagens.mensagem-sucesso'), this.translate.instant('mensagens.registro-deletado'));
       this.blockUI.stop();
       return;
     }
-    this.toastr.error('Mensagem de Erro', 'Erro ao deletar o registro!');
+    this.toastr.success(this.translate.instant('mensagens.mensagem-erro'), this.translate.instant('mensagens.erro-deletar-registro'));
     this.blockUI.stop();
   }
 

@@ -1,8 +1,8 @@
-<h2 mat-dialog-title>Deletar Entidade</h2>
+<h2 mat-dialog-title>{{'dialog.titulo'  | translate}}</h2>
 <mat-dialog-content class="mat-typography">
-  <p>Tem certeza que deseja deletar essa entidade ?</p>
+  <p>{{'dialog.mensagem'  | translate}}</p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Confirmar</button>
+  <button mat-button mat-dialog-close>{{'dialog.botao-cancelar'  | translate}}</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{'dialog.botao-confirmar'  | translate}}</button>
 </mat-dialog-actions>

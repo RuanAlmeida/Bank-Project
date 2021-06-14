@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +22,7 @@ import { DescriptionActivePipe } from './pipe/description-active.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './component/dialog/dialog.component';
+import { ChangeCoinPipe } from './pipe/change-coin.pipe';
 
 
 
@@ -31,7 +33,8 @@ import { DialogComponent } from './component/dialog/dialog.component';
     CepInputComponent,
     CnpjPipe,
     CepPipe,
-    DialogComponent
+    DialogComponent,
+    ChangeCoinPipe
   ],
   imports: [
     CommonModule,
@@ -50,7 +53,8 @@ import { DialogComponent } from './component/dialog/dialog.component';
     FormsModule,
     ReactiveFormsModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    TranslateModule
   ],
   exports: [
     MatSliderModule,
@@ -72,7 +76,9 @@ import { DialogComponent } from './component/dialog/dialog.component';
     ReactiveFormsModule,
     CnpjPipe,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    TranslateModule,
+    ChangeCoinPipe
   ]
 })
 export class SharedModule { }

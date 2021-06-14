@@ -1,0 +1,50 @@
+{
+  "listagem":{
+    "titulo": "Itau Polo",
+    "sub-titulo": "Check out some of the main centers in itaú below.",
+    "pesquisa": "Search...",
+    "formulario": {
+      "nome": "Name",
+      "negocio": "Business",
+      "avaliacao": "Valuation",
+      "ativo": "Active",
+      "acoes": "Actions"
+    }
+  },
+  "menu": {
+    "cargo": "Itaú BBA Director",
+    "itens": {
+      "alterar-senha": "Change Password",
+      "sair": "Log out"
+    }
+  },
+  "mensagens": {
+    "mensagem-sucesso": "Success Message",
+    "mensagem-erro": "Error message",
+    "registro-atualizado": "Updated record",
+    "registro-deletado": "Record Deleted",
+    "erro-deletar-registro": "Error deleting registry",
+    "carregando": "Loading..."
+  },
+  "dialog": {
+    "titulo": "Delete Entity",
+    "mensagem": "Are you sure you want to delete this entity?",
+    "botao-cancelar": "Cancel",
+    "botao-confirmar": "Confirm"
+  },
+  "form-negociacao": {
+    "titulo": "Pole",
+    "sub-titulo": "Viewing pole details",
+    "detalhes-endereco": "Address Details",
+    "inputs": {
+      "rua": "Street",
+      "bairro": "District",
+      "estado": "State",
+      "cidade": "City"
+    },
+    "detalhes-empresa": "Company Details",
+    "botao-voltar": "Back",
+    "botao-salvar": "Save",
+    "inactive": "Inactive"
+  }
+}

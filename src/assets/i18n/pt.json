@@ -1,0 +1,51 @@
+{
+  "listagem": {
+    "titulo": "Pólos Itaú",
+    "sub-titulo": "Confira abaixo alguns dos principais polos do itaú",
+    "pesquisa": "Pesquisa...",
+    "formulario": {
+      "nome": "Nome",
+      "negocio": "Negocio",
+      "avaliacao": "Avaliação",
+      "ativo": "Ativo",
+      "acoes": "Ações"
+    }
+  },
+  "menu": {
+    "cargo": "Diretor Itaú BBA",
+    "itens": {
+      "alterar-senha": "Alterar Senha",
+      "sair": "Sair"
+    }
+  },
+  "mensagens": {
+    "mensagem-sucesso": "Mensagem de Sucesso",
+    "mensagem-erro": "Mensagem de Erro",
+    "registro-atualizado": "Registro Atualizado",
+    "registro-deletado": "Registro Deletado!",
+    "erro-deletar-registro": "Erro ao deletar o registro!",
+    "carregando": "Carregando..."
+  },
+  "dialog": {
+    "titulo": "Deletar Entidade",
+    "mensagem": "Tem certeza que deseja deletar essa entidade ?",
+    "botao-cancelar": "Cancelar",
+    "botao-confirmar": "Confirmar"
+  },
+  "form-negociacao": {
+    "titulo": "Pólo",
+    "sub-titulo": "Exibindo detalhes do pólo",
+    "detalhes-endereco": "Detalhes do Endereco",
+    "inputs": {
+      "rua": "Rua",
+      "bairro": "Bairro",
+      "estado": "Estado",
+      "cidade": "Cidade"
+    },
+    "detalhes-empresa": "Detalhes da Empresa",
+    "botao-voltar": "Voltar",
+    "botao-salvar": "Salvar",
+    "ativo": "Ativo",
+    "inactive": "Inativo"
+  }
+}

@@ -1,15 +1,14 @@
-
-  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="container">
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="container">
 
     <header>
 
       <div class="title">
-        <h1>Polo {{name}}</h1>
+        <h1>{{'form-negociacao.titulo' | translate}} {{name}}</h1>
       </div>
 
       <div class="sub-title">
-        <h3>exibindo detalhes do polo {{name}} #{{form.value.id}} </h3>
+        <h3>{{'form-negociacao.sub-titulo' | translate}} {{name}} #{{form.value.id}} </h3>
       </div>
 
     </header>
@@ -20,7 +19,7 @@
       <div class="andress">
 
         <div class="title-description">
-          <p> Detalhes do Endereco</p>
+          <p>{{'form-negociacao.detalhes-endereco' | translate}}</p>
         </div>
 
         <div class="field-cep">
@@ -49,21 +48,21 @@
       <div class="entity">
 
         <div class="title-description">
-          <p> Detalhes da Empresa</p>
+          <p> {{'form-negociacao.detalhes-empresa' | translate}}</p>
         </div>
 
         <mat-form-field appearance="outline" style="padding: 0px 0px 0px;">
-          <mat-label>Nome</mat-label>
+          <mat-label>{{'listagem.formulario.nome'  | translate}}</mat-label>
           <input matInput formControlName="name" name="name" placeholder="Placeholder">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Business</mat-label>
+          <mat-label>{{'listagem.formulario.negocio'  | translate}}</mat-label>
           <input matInput formControlName="business" name="business" placeholder="Placeholder">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Valuation</mat-label>
+          <mat-label>{{'listagem.formulario.avaliacao'  | translate}}</mat-label>
           <input matInput formControlName="valuation" name="valuation" placeholder="Placeholder">
         </mat-form-field>
 
@@ -73,10 +72,10 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Ativo ?</mat-label>
+          <mat-label> {{'listagem.formulario.ativo'  | translate}} ?</mat-label>
           <mat-select formControlName="active" [disabled]="!isCreateOrUpdateEntity">
             <mat-option *ngFor="let active of actives" [value]="active">
-              {{active | descriptionActive}}
+              {{active | descriptionActive | translate}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -86,13 +85,14 @@
 
     <footer>
       <div class="button-row">
-        <button mat-raised-button class="button-back" type="button" (click)="back()">Voltar</button>
+        <button mat-raised-button class="button-back" type="button" (click)="back()">
+          {{'form-negociacao.botao-voltar' | translate}}
+        </button>
         <button mat-raised-button class="button-save" *ngIf="isCreateOrUpdateEntity" type="submit"
-          [disabled]="!form.valid">Salvar</button>
+          [disabled]="!form.valid">{{'form-negociacao.botao-salvar' | translate}}
+        </button>
       </div>
     </footer>
 
   </div>
-  </form>
-
-
+</form>

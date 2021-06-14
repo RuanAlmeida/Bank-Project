@@ -1,3 +1,5 @@
+import { ChangeCoinPipe } from './../../../shared/pipe/change-coin.pipe';
+import { TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs/operators';
 import { CepPipe } from './../../../shared/pipe/cep.pipe';
 import { CurrencyPipe } from '@angular/common';
@@ -35,15 +37,18 @@ export class BusinessFormComponent implements OnInit {
 
   iBusiness!: IBusiness;
 
+
+
   constructor(
     private formBuilder: FormBuilder,
     private businessService: BusinessService,
     private route: ActivatedRoute,
     private router: Router,
     private cnpjPipe: CnpjPipe,
-    private currencyPipe: CurrencyPipe,
+    private changeCoinPipe: ChangeCoinPipe,
     private cepPipe: CepPipe,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
   ) {
   }
 
@@ -85,7 +90,7 @@ export class BusinessFormComponent implements OnInit {
       id: entity.id,
       name: entity.name,
       business: entity.business,
-      valuation: this.currencyPipe.transform(entity.valuation, 'BRL'),
+      valuation: this.changeCoinPipe.transform(entity.valuation),
       active: entity.active,
       cep: this.cepPipe.transform(entity.cep),
       cnpj: this.cnpjPipe.transform(entity.cnpj),
@@ -107,12 +112,13 @@ export class BusinessFormComponent implements OnInit {
    }
 
   onSubmit(){
-    this.blockUI.start('Loading...');
+     this.blockUI.start(this.translate.instant('mensagens.carregando'));
     this.iBusiness = this.form.value;
     this.businessService.update(this.iBusiness)
     .pipe(finalize(() => this.blockUI.stop()))
     .subscribe(()=>  {
-      this.toastr.success('Mensagem de Sucesso', 'Registro Atualizado!');
+      this.toastr.success(
+      this.translate.instant('mensagens.mensagem-sucesso'), this.translate.instant('mensagens.registro-atualizado'));
       this.back();})
   }
 
@@ -123,7 +129,7 @@ export class BusinessFormComponent implements OnInit {
   }
 
   findOne(id: number){
-    this.blockUI.start('Loading...');
+     this.blockUI.start(this.translate.instant('mensagens.carregando'));
     this.businessService.findOne(id)
     .pipe(finalize(() => this.blockUI.stop()))
     .subscribe(args =>  this.onLoadEntity(args));

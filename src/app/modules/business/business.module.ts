@@ -1,3 +1,4 @@
+import { ChangeCoinPipe } from './../../shared/pipe/change-coin.pipe';
 import { CepPipe } from './../../shared/pipe/cep.pipe';
 import { CnpjPipe } from './../../shared/pipe/cnpj.pipe';
 import { CommonModule, CurrencyPipe, DecimalPipe } from '@angular/common';
@@ -25,7 +26,8 @@ import { BusinessRoutingModule } from './router/business-routing.module';
     CepApiService,
     CnpjPipe,
     CurrencyPipe,
-    CepPipe
+    CepPipe,
+    ChangeCoinPipe
   ],
 })
 export class BusinessModule { }

@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -5,8 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DescriptionActivePipe implements PipeTransform {
 
+  constructor(private translate: TranslateService){}
+
   transform(value: boolean): string {
-    return value ? 'Active' : 'Inactive';
+    return value ? 'listagem.formulario.ativo' : 'form-negociacao.inactive';
   }
 
 }

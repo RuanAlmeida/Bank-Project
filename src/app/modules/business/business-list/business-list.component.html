@@ -2,10 +2,10 @@
 
   <header>
     <div class="title">
-      <h1>Polo Itaú</h1>
+      <h1>{{'listagem.titulo' | translate}}</h1>
     </div>
     <div class="sub-title">
-      <h3>confira abaixo alguns dos principais polos do itaú</h3>
+      <h3>{{'listagem.sub-titulo' | translate}}</h3>
     </div>
   </header>
 
@@ -13,7 +13,7 @@
 
     <div class="field-filter">
       <mat-form-field appearance="outline" class="field-full-width">
-        <input matInput placeholder="Pesquisa..." (keyup)="doFilter($event)">
+        <input matInput [placeholder]="'listagem.pesquisa' | translate" (keyup)="doFilter($event)">
       </mat-form-field>
     </div>
 
@@ -26,23 +26,23 @@
       <table mat-table [dataSource]="business" matSort>
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name. </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'listagem.formulario.nome'  | translate}} </th>
           <td mat-cell *matCellDef="let element" style="font-weight: 600"> {{element.name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="business">
-          <th mat-header-cell *matHeaderCellDef> Business </th>
+          <th mat-header-cell *matHeaderCellDef> {{'listagem.formulario.negocio'  | translate}} </th>
           <td mat-cell *matCellDef="let element"> {{element.business}} </td>
         </ng-container>
 
         <ng-container matColumnDef="valuation">
-          <th mat-header-cell *matHeaderCellDef> Valuation </th>
-          <td mat-cell *matCellDef="let element"> {{element.valuation | currency:'BRL':true}} </td>
+          <th mat-header-cell *matHeaderCellDef> {{'listagem.formulario.avaliacao'  | translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{element.valuation | changeCoin}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="active">
-          <th mat-header-cell *matHeaderCellDef> Ativo </th>
+          <th mat-header-cell *matHeaderCellDef> {{'listagem.formulario.ativo'  | translate}} </th>
           <td mat-cell *matCellDef="let element">
             <mat-icon class="situation-business" [ngClass]="{' active': element.active,
               ' inactive': !element.active}">circle</mat-icon>
@@ -50,7 +50,7 @@
         </ng-container>
 
         <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Ação </th>
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> {{'listagem.formulario.acoes'  | translate}} </th>
           <td mat-cell *matCellDef="let element" style="text-align: center;">
             <a class="action" matTooltip="Detalhar">
               <mat-icon (click)="showDetail(element.id)">visibility</mat-icon>
